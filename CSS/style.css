@@ -1,0 +1,165 @@
+/* Paleta de colores */
+:root {
+    --bg-deep: #05070a;        
+    --glass-bg: rgba(255, 255, 255, 0.03); 
+    --neon-blue: #00d2ff;      
+    --neon-purple: #9d50bb;    
+    --text-glow: #ffffff;      
+    --text-dim: #a0a0a0;       
+    --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*BODY: cambio de tipografía, color fondo*/
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-glow);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* CONTENEDOR FLEX responsive*/
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex: 1 1 280px; 
+    background: linear-gradient(180deg, rgba(15, 15, 25, 0.9), rgba(5, 5, 10, 0.9));
+    border-right: 1px solid var(--border-glass);
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+/*Foto de perfil redonda con borde neón*/
+.profile-img-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+/*Para que no se aplaste la foto*/
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Cajas de enlaces de redes*/
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: var(--text-glow);
+    background: var(--glass-bg);
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-glass);
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+/*Tuneo hover*/
+.nav-btn:hover {
+    background: rgba(0, 210, 255, 0.1);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* CONTENIDO separado*/
+.content {
+    flex: 10 1 400px; 
+    padding: 3rem;
+}
+/*Tuneo títulos*/
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 4px solid var(--neon-purple);
+    padding-left: 15px;
+}
+
+/* FLEX LAYOUT */
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* TARJETAS */
+.card, .card-text {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-glass);
+    padding: 1.5rem;
+    border-radius: 15px;
+    flex: 1 1 300px; 
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+/*Color hover cajas, sombra y también desplazamiento paralelo*/
+.card:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+/* SKILLS: Ajuste de separación */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Mayor espacio entre cada bloque de skill */
+}
+
+/* Contenedor para el nombre y la barra */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre el texto y su barra */
+}
+/*Barra de progreso */
+.progress-bar {
+    background: rgba(255, 255, 255, 0.05);
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/*Degradado de la barra de progreso*/
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    box-shadow: 0 0 10px var(--neon-blue);
+    border-radius: 20px;
+}
+
+/* FOOTER */
+.main-footer {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-top: 1px solid var(--border-glass);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
