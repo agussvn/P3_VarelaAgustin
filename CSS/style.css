@@ -1,4 +1,4 @@
-/* Paleta de colores */
+/* Paleta de colores, más cómoda con los colores asignados a varibles */
 :root {
     --bg-deep: #05070a;        
     --glass-bg: rgba(255, 255, 255, 0.03); 
@@ -15,7 +15,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*BODY: cambio de tipografía, color fondo*/
+/*BODY: cambio de tipografía, color fondo y ocultación del contenido que se desborda horizontalmente*/
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-deep);
@@ -31,7 +31,7 @@ body {
     min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* SIDEBAR, con fondo fade */
 .sidebar {
     flex: 1 1 280px; 
     background: linear-gradient(180deg, rgba(15, 15, 25, 0.9), rgba(5, 5, 10, 0.9));
@@ -40,7 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 10;
+    z-index: 10; /*Controla que elemneto se superpone*/
 }
 /*Foto de perfil redonda con borde neón*/
 .profile-img-container {
@@ -49,14 +49,14 @@ body {
     border-radius: 50%;
     border: 2px solid var(--neon-blue);
     box-shadow: 0 0 15px var(--neon-blue);
-    overflow: hidden;
+    overflow: hidden; /*Oculta todo el contenido que se salga del contenedor*/
     margin-bottom: 1.5rem;
 }
 /*Para que no se aplaste la foto*/
 .profile-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /*Se ajusta la imagen a su conetendir*/
 }
 /*Cajas de enlaces de redes*/
 .sidebar-nav {
@@ -67,8 +67,8 @@ body {
     margin-top: 2rem;
 }
 
-.nav-btn {
-    text-decoration: none;
+.nav-btn { /*Cajas de enlaces de redes*/
+    text-decoration: none; /*Quita lineado de enlace*/
     color: var(--text-glow);
     background: var(--glass-bg);
     padding: 0.8rem;
@@ -108,7 +108,7 @@ body {
     gap: 1.5rem;
 }
 
-/* TARJETAS */
+/* TARJETAS, con movimiento horizontal con hover */
 .card, .card-text {
     background: var(--glass-bg);
     border: 1px solid var(--border-glass);
@@ -143,9 +143,9 @@ body {
     background: rgba(255, 255, 255, 0.05);
     height: 12px;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: hidden; /*Oculta todo el contenido que se salga del contenedor*/
 }
-/*Degradado de la barra de progreso*/
+/*Degradado de la barra de progreso con sombra*/
 .progress {
     height: 100%;
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
